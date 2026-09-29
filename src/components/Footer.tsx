@@ -1,6 +1,7 @@
+import { useEffect, useState } from 'react';
 import { Mail, Phone, MessageCircle, MapPin, Instagram, Facebook, Linkedin, ArrowRight } from 'lucide-react';
 
-const NAV_LINKS = ['Home', 'Services', 'Portfolio', 'Pricing', 'About', 'Contact'];
+const NAV_LINKS = ['Home', 'Services', 'Portfolio', 'About', 'Contact'];
 const SERVICE_LINKS = [
   'Website Design',
   'Business Websites',
@@ -11,16 +12,43 @@ const SERVICE_LINKS = [
 ];
 
 export default function Footer() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const footer = document.getElementById('site-footer');
+    if (!footer) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.12 }
+    );
+
+    observer.observe(footer);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <footer className="bg-ink-950 pt-16 pb-8 text-ink-400">
+    <footer
+      id="site-footer"
+      className={`bg-ink-950 pt-16 pb-8 text-ink-400 transition-all duration-700 ease-out ${
+        isVisible ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'
+      }`}
+    >
       <div className="container-px mx-auto max-w-7xl">
         <div className="grid gap-10 lg:grid-cols-[1.5fr_1fr_1fr_1.5fr] lg:gap-8">
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2.5">
-              <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-brand-600 text-white">
-                <span className="text-sm font-extrabold tracking-tight">GD</span>
-              </span>
+              <img
+                src="/gd-logo.png"
+                alt="GD Solutions"
+                className="h-11 w-11 object-contain transition-transform duration-500 hover:rotate-3 hover:scale-105"
+              />
               <span className="text-base font-extrabold tracking-tight text-white">
                 GD SOLUTIONS
               </span>
@@ -91,31 +119,51 @@ export default function Footer() {
                   hello@gdsolutions.in
                 </a>
               </li>
-              <li className="flex items-center gap-3 text-sm">
-                <Phone className="h-4 w-4 text-brand-500" />
-                <a href="tel:+910000000000" className="hover:text-brand-400">
-                  +91 00000 00000
-                </a>
+              <li className="flex items-start gap-3 text-sm">
+                <Phone className="mt-0.5 h-4 w-4 shrink-0 text-brand-500" />
+                <div className="space-y-1">
+                  <a href="tel:+919007502045" className="block transition-colors hover:text-brand-400">
+                    +91 90075 02045
+                  </a>
+                  <a href="tel:+919830908641" className="block transition-colors hover:text-brand-400">
+                    +91 98309 08641
+                  </a>
+                </div>
               </li>
               <li className="flex items-center gap-3 text-sm">
-                <MessageCircle className="h-4 w-4 text-brand-500" />
-                <a href="#" className="hover:text-brand-400">
-                  WhatsApp
+                <a
+                  href="https://wa.me/919830908641"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Chat with GD Solutions on WhatsApp"
+                  className="group flex items-center gap-3 transition-transform duration-300 hover:scale-[1.02]"
+                >
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-brand-600/15 text-brand-500 transition-all duration-300 group-hover:bg-brand-600 group-hover:text-white group-hover:shadow-lg group-hover:shadow-brand-600/30">
+                    <MessageCircle className="h-4 w-4 animate-pulse" />
+                  </span>
+                  <span className="transition-colors group-hover:text-brand-400">WhatsApp: +91 98309 08641</span>
                 </a>
               </li>
-              <li className="flex items-center gap-3 text-sm">
-                <MapPin className="h-4 w-4 text-brand-500" />
-                <span>India</span>
+              <li className="flex items-start gap-3 text-sm">
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-brand-500" />
+                <span className="leading-relaxed">RDB Boulevard, 5th Floor, Block EP and GP, Salt Lake, Sector 5, Kolkata - 700091</span>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 sm:flex-row">
-          <p className="text-xs text-ink-500">© 2026 GD Solutions. All rights reserved.</p>
-          <p className="text-xs text-ink-500">
-            Website Design from <span className="font-semibold text-brand-500">₹999/month</span>
-          </p>
+          <p className="text-xs text-ink-500 transition-opacity duration-700 delay-500">© 2026 GD Solutions. All rights reserved.</p>
+          <a
+            href="https://wa.me/919830908641"
+            target="_blank"
+            rel="noreferrer"
+            className="group inline-flex items-center gap-2 rounded-full border border-brand-500/20 bg-brand-500/10 px-4 py-2 text-xs font-semibold text-brand-400 transition-all duration-300 hover:-translate-y-0.5 hover:bg-brand-500 hover:text-white hover:shadow-lg hover:shadow-brand-500/20"
+          >
+            <MessageCircle className="h-3.5 w-3.5 animate-pulse" />
+            WhatsApp us
+            <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
+          </a>
         </div>
       </div>
     </footer>

@@ -1,8 +1,8 @@
 import { ArrowRight, Check, Shield, Globe, Smartphone, Lock, Search, Layout } from 'lucide-react';
 
 const INCLUDED = [
-  { icon: Globe, label: 'Free Domain' },
-  { icon: Shield, label: 'Free Hosting' },
+  { icon: Globe, label: 'Domain Included' },
+  { icon: Shield, label: 'Hosting Included' },
   { icon: Smartphone, label: 'Responsive Design' },
   { icon: Lock, label: 'SSL Certificate' },
   { icon: Search, label: 'Basic SEO' },
@@ -29,23 +29,15 @@ export default function OfferSection() {
               Your Business Deserves a Professional Website.
             </h2>
             <p className="mt-5 max-w-lg text-lg leading-relaxed text-ink-300">
-              Get started with a professionally designed website without the traditional
-              agency price tag.
+              Get started with a professionally designed website that helps your business
+              look credible and reach more customers.
             </p>
-
-            <div className="mt-8 flex items-end gap-3">
-              <span className="text-6xl font-extrabold text-white">₹999</span>
-              <span className="mb-2 text-lg font-medium text-ink-400">/ month</span>
-            </div>
 
             <div className="mt-8 flex flex-wrap gap-4">
               <a href="#contact" className="btn-primary">
                 Start My Website
                 <ArrowRight className="h-4 w-4" />
               </a>
-              <p className="self-center text-xs text-ink-500">
-                Custom requirements may be quoted separately.
-              </p>
             </div>
           </div>
 

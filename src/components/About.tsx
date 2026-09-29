@@ -23,11 +23,6 @@ export default function About() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-ink-900/40 to-transparent" />
             </div>
-            {/* Floating stat card */}
-            <div className="absolute -bottom-6 -right-4 hidden rounded-2xl border border-ink-100 bg-white p-5 shadow-xl shadow-ink-900/10 sm:block lg:-right-6">
-              <p className="text-3xl font-extrabold text-brand-600">₹999</p>
-              <p className="text-xs font-medium text-ink-500">Starting price / month</p>
-            </div>
           </div>
 
           {/* Copy */}

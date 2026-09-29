@@ -37,10 +37,6 @@ export default function CTA() {
                 Talk to GD Solutions
               </a>
             </div>
-
-            <p className="mt-6 text-sm text-ink-400">
-              Plans starting from <span className="font-semibold text-brand-400">₹999/month</span>
-            </p>
           </div>
         </div>
       </div>

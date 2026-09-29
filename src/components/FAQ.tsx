@@ -3,20 +3,16 @@ import { Plus, Minus } from 'lucide-react';
 
 const FAQS = [
   {
-    q: 'How much does a website cost?',
-    a: 'Our starter website plan begins at just ₹999 per month, which includes a professional website, free domain, free hosting and more. For custom requirements like eCommerce or web applications, we provide tailored quotes based on your needs.',
+    q: 'What is included in your starter website?',
+    a: 'It includes a professional website, domain, hosting, mobile responsive design, SSL certificate, contact form, basic SEO setup, WhatsApp integration and ongoing maintenance support.',
   },
   {
-    q: 'What is included in the ₹999/month plan?',
-    a: 'The plan includes a professional website, free domain, free hosting, mobile responsive design, SSL certificate, contact form, basic SEO setup, WhatsApp integration and ongoing maintenance support.',
-  },
-  {
-    q: 'Do I get a free domain?',
-    a: 'Yes, a domain is included free with our starter website plan. We help you choose and register a domain name that fits your business.',
+    q: 'Do I get a domain name?',
+    a: 'Yes, a domain is included with our starter website. We help you choose and register a domain name that fits your business.',
   },
   {
     q: 'Do you provide hosting?',
-    a: 'Yes, hosting is included free with your website plan. Your website will be hosted on reliable servers with good uptime and performance.',
+    a: 'Yes, hosting is included with your website. Your website will be hosted on reliable servers with good uptime and performance.',
   },
   {
     q: 'Will my website work on mobile?',
@@ -28,11 +24,11 @@ const FAQS = [
   },
   {
     q: 'Can I request custom features?',
-    a: 'Yes. We can add custom features like booking systems, payment gateways, user accounts and more. Custom features are quoted separately based on complexity.',
+    a: 'Yes. We can add custom features like booking systems, payment gateways, user accounts and more. Custom features are scoped based on your requirements.',
   },
   {
     q: 'Do you provide website maintenance?',
-    a: 'Yes, ongoing maintenance and support are included in the monthly plan. We help you keep your website updated, secure and running smoothly.',
+    a: 'Yes, ongoing maintenance and support are included with your website. We help you keep your website updated, secure and running smoothly.',
   },
   {
     q: 'Can you redesign my existing website?',
@@ -40,7 +36,7 @@ const FAQS = [
   },
   {
     q: 'Do you provide SEO?',
-    a: 'Yes, basic SEO setup is included with every website. For advanced SEO and digital marketing services, we offer dedicated plans tailored to your goals.',
+    a: 'Yes, basic SEO setup is included with every website. For advanced SEO and digital marketing services, we offer dedicated services tailored to your goals.',
   },
 ];
 

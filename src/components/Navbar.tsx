@@ -5,7 +5,6 @@ const NAV_LINKS = [
   { label: 'Home', href: '#home' },
   { label: 'Services', href: '#services' },
   { label: 'Portfolio', href: '#portfolio' },
-  { label: 'Pricing', href: '#pricing' },
   { label: 'About', href: '#about' },
   { label: 'Contact', href: '#contact' },
 ];
@@ -43,13 +42,15 @@ export default function Navbar() {
           }`}
         >
           {/* Logo */}
-          <a href="#home" className="group flex items-center gap-2.5">
-            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-brand-600 text-white shadow-lg shadow-brand-600/30 transition-transform duration-300 group-hover:scale-105">
-              <span className="text-sm font-extrabold tracking-tight">GD</span>
-            </span>
+          <a href="#home" className="group flex items-center gap-2.5" aria-label="GD Solutions home">
+            <img
+              src="/gd-logo.png"
+              alt="GD Solutions"
+              className="h-10 w-10 object-contain transition-transform duration-300 group-hover:scale-105"
+            />
             <span
               className={`text-base font-extrabold tracking-tight transition-colors duration-300 ${
-                scrolled ? 'text-ink-900' : 'text-ink-900'
+                scrolled ? 'text-ink-900' : 'text-white'
               }`}
             >
               GD SOLUTIONS
@@ -62,7 +63,9 @@ export default function Navbar() {
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="group relative px-4 py-2 text-sm font-medium text-ink-600 transition-colors duration-200 hover:text-ink-900"
+                  className={`group relative px-4 py-2 text-sm font-medium transition-colors duration-200 ${
+                    scrolled ? 'text-ink-600 hover:text-ink-900' : 'text-white/80 hover:text-white'
+                  }`}
                 >
                   {link.label}
                   <span className="absolute inset-x-4 -bottom-0.5 h-0.5 origin-left scale-x-0 rounded-full bg-brand-600 transition-transform duration-300 group-hover:scale-x-100" />
@@ -83,7 +86,9 @@ export default function Navbar() {
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
-            className="flex h-10 w-10 items-center justify-center rounded-lg text-ink-800 transition-colors hover:bg-ink-100 lg:hidden"
+            className={`flex h-10 w-10 items-center justify-center rounded-lg transition-colors lg:hidden ${
+              scrolled ? 'text-ink-800 hover:bg-ink-100' : 'text-white hover:bg-white/10'
+            }`}
             aria-label={open ? 'Close menu' : 'Open menu'}
             aria-expanded={open}
           >
